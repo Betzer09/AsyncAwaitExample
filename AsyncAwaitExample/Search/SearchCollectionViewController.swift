@@ -8,23 +8,21 @@
 import UIKit
 
 
-
 class SearchCollectionViewController: UICollectionViewController {
     
     private struct Constants {
         static let reuseIdentifier = "movieCell"
     }
+    
+    var viewModel: SearchCollectionViewModelLogic? = SearchCollectionViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Constants.reuseIdentifier)
     }
 
 
     // MARK: UICollectionViewDataSource
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
