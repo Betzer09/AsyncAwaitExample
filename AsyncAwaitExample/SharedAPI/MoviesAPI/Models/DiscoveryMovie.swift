@@ -7,6 +7,14 @@
 
 import Foundation
 
+struct DiscoveryMoviesResult: Decodable {
+    let movies: [DiscoveryMovie]
+    
+    enum CodingKeys: String, CodingKey {
+        case movies = "results"
+    }
+}
+
 struct DiscoveryMovie: Decodable {
     let backdropPath: String
     let title: String

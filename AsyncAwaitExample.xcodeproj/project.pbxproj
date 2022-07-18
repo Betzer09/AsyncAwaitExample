@@ -18,7 +18,18 @@
 		11E4F4562885E2440007F1F9 /* DiscoverMoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4552885E2440007F1F9 /* DiscoverMoviesAPI.swift */; };
 		11E4F4582885E2DA0007F1F9 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4572885E2DA0007F1F9 /* Keys.swift */; };
 		11E4F45A2885E8660007F1F9 /* DiscoveryMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4592885E8660007F1F9 /* DiscoveryMovie.swift */; };
+		11E4F4632885EC810007F1F9 /* AsyncAwaitExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4622885EC810007F1F9 /* AsyncAwaitExampleTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11E4F4642885EC810007F1F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 119E705C286B979500325E5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 119E7063286B979500325E5B;
+			remoteInfo = AsyncAwaitExample;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		119E7064286B979500325E5B /* AsyncAwaitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncAwaitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,10 +45,19 @@
 		11E4F4552885E2440007F1F9 /* DiscoverMoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesAPI.swift; sourceTree = "<group>"; };
 		11E4F4572885E2DA0007F1F9 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		11E4F4592885E8660007F1F9 /* DiscoveryMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryMovie.swift; sourceTree = "<group>"; };
+		11E4F4602885EC810007F1F9 /* AsyncAwaitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncAwaitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11E4F4622885EC810007F1F9 /* AsyncAwaitExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitExampleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		119E7061286B979500325E5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11E4F45D2885EC810007F1F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				119E7066286B979500325E5B /* AsyncAwaitExample */,
+				11E4F4612885EC810007F1F9 /* AsyncAwaitExampleTests */,
 				119E7065286B979500325E5B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				119E7064286B979500325E5B /* AsyncAwaitExample.app */,
+				11E4F4602885EC810007F1F9 /* AsyncAwaitExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,9 +113,8 @@
 		119E707E286BA17900325E5B /* SharedAPI */ = {
 			isa = PBXGroup;
 			children = (
-				11E4F45B2885EC1B0007F1F9 /* Models */,
+				11E4F4692885ED070007F1F9 /* MoviesAPI */,
 				119E707F286BA1B200325E5B /* ImageAPI.swift */,
-				11E4F4552885E2440007F1F9 /* DiscoverMoviesAPI.swift */,
 			);
 			path = SharedAPI;
 			sourceTree = "<group>";
@@ -104,6 +125,23 @@
 				11E4F4592885E8660007F1F9 /* DiscoveryMovie.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		11E4F4612885EC810007F1F9 /* AsyncAwaitExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				11E4F4622885EC810007F1F9 /* AsyncAwaitExampleTests.swift */,
+			);
+			path = AsyncAwaitExampleTests;
+			sourceTree = "<group>";
+		};
+		11E4F4692885ED070007F1F9 /* MoviesAPI */ = {
+			isa = PBXGroup;
+			children = (
+				11E4F45B2885EC1B0007F1F9 /* Models */,
+				11E4F4552885E2440007F1F9 /* DiscoverMoviesAPI.swift */,
+			);
+			path = MoviesAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +164,24 @@
 			productReference = 119E7064286B979500325E5B /* AsyncAwaitExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		11E4F45F2885EC810007F1F9 /* AsyncAwaitExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11E4F4662885EC810007F1F9 /* Build configuration list for PBXNativeTarget "AsyncAwaitExampleTests" */;
+			buildPhases = (
+				11E4F45C2885EC810007F1F9 /* Sources */,
+				11E4F45D2885EC810007F1F9 /* Frameworks */,
+				11E4F45E2885EC810007F1F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11E4F4652885EC810007F1F9 /* PBXTargetDependency */,
+			);
+			name = AsyncAwaitExampleTests;
+			productName = AsyncAwaitExampleTests;
+			productReference = 11E4F4602885EC810007F1F9 /* AsyncAwaitExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -138,6 +194,10 @@
 				TargetAttributes = {
 					119E7063286B979500325E5B = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					11E4F45F2885EC810007F1F9 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 119E7063286B979500325E5B;
 					};
 				};
 			};
@@ -155,6 +215,7 @@
 			projectRoot = "";
 			targets = (
 				119E7063286B979500325E5B /* AsyncAwaitExample */,
+				11E4F45F2885EC810007F1F9 /* AsyncAwaitExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -167,6 +228,13 @@
 				119E7074286B979700325E5B /* LaunchScreen.storyboard in Resources */,
 				119E7071286B979700325E5B /* Assets.xcassets in Resources */,
 				119E706F286B979500325E5B /* Search.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11E4F45E2885EC810007F1F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +256,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11E4F45C2885EC810007F1F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11E4F4632885EC810007F1F9 /* AsyncAwaitExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11E4F4652885EC810007F1F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 119E7063286B979500325E5B /* AsyncAwaitExample */;
+			targetProxy = 11E4F4642885EC810007F1F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		119E706D286B979500325E5B /* Search.storyboard */ = {
@@ -380,6 +464,42 @@
 			};
 			name = Release;
 		};
+		11E4F4672885EC810007F1F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59FZQ9GQFR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yourfuzzy.AsyncAwaitExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AsyncAwaitExample.app/AsyncAwaitExample";
+			};
+			name = Debug;
+		};
+		11E4F4682885EC810007F1F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59FZQ9GQFR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yourfuzzy.AsyncAwaitExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AsyncAwaitExample.app/AsyncAwaitExample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -397,6 +517,15 @@
 			buildConfigurations = (
 				119E7079286B979700325E5B /* Debug */,
 				119E707A286B979700325E5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11E4F4662885EC810007F1F9 /* Build configuration list for PBXNativeTarget "AsyncAwaitExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11E4F4672885EC810007F1F9 /* Debug */,
+				11E4F4682885EC810007F1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

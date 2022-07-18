@@ -8,14 +8,12 @@
 import Foundation
 
 protocol DiscoverMoviesAPILogic {
-    func fetchDiscoveryMovies(_ page: Int) async throws -> DiscoveryMovie
+    func fetchDiscoveryMovies(_ page: Int) async throws -> [DiscoveryMovie]
 }
 
 
-struct DiscoverMoviesAPI: DiscoverMoviesAPILogic {
+class DiscoverMoviesAPI: DiscoverMoviesAPILogic {
     private let baseURL = URL(string: "https://api.themoviedb.org/3")!
-    
-    private init() {}
     
     private let jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -27,7 +25,7 @@ struct DiscoverMoviesAPI: DiscoverMoviesAPILogic {
         case non200HTTPResponseError
     }
     
-    func fetchDiscoveryMovies(_ page: Int = 1) async throws -> DiscoveryMovie {
+    func fetchDiscoveryMovies(_ page: Int = 1) async throws -> [DiscoveryMovie] {
         let pageItem = URLQueryItem(name: "page", value: "\(page)")
         let url = buildSignedURL(withPath: "discover/movie", queryItems: [pageItem])
         let (data, response) = try await URLSession.shared.data(from: url)
@@ -36,7 +34,7 @@ struct DiscoverMoviesAPI: DiscoverMoviesAPILogic {
             throw DiscoveryError.non200HTTPResponseError
         }
         
-        return try jsonDecoder.decode(DiscoveryMovie.self, from: data)
+        return try jsonDecoder.decode(DiscoveryMoviesResult.self, from: data).movies
     }
 
     private func buildSignedURL(withPath path: String, queryItems: [URLQueryItem] = []) -> URL {
