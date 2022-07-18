@@ -6,11 +6,20 @@
 //
 
 import Foundation
+import Combine
 
-protocol SearchCollectionViewModelLogic {
-    
-}
 
-class SearchCollectionViewModel: SearchCollectionViewModelLogic {
+class SearchCollectionViewModel {
+    // MARK: -  Dependiens
+    let discoveryAPI: DiscoverMoviesAPILogic = DiscoverMoviesAPI()
     
+    @Published var movies: [DiscoveryMovie] = []
+    
+    
+    func fetchMovies() {
+        Task {
+            let requestedMovies = try? await discoveryAPI.fetchDiscoveryMovies(1)
+            movies = requestedMovies ?? []
+        }
+    }
 }

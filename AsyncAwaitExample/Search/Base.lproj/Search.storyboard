@@ -11,34 +11,51 @@
         <!--The Movie DB-->
         <scene sceneID="jiE-bz-cz1">
             <objects>
-                <collectionViewController id="JTQ-rj-g4x" sceneMemberID="viewController">
+                <collectionViewController id="JTQ-rj-g4x" customClass="SearchCollectionViewController" customModule="AsyncAwaitExample" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="f1B-zS-AgQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m39-D6-njh">
-                            <size key="itemSize" width="414" height="195"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rjS-2u-DqZ">
+                            <size key="itemSize" width="414" height="200"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UZR-oj-u45">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="195"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiscoveryMovieCollectionViewCell" id="UZR-oj-u45" customClass="DiscoveryMovieCollectionViewCell" customModule="AsyncAwaitExample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bXd-Ga-jdy">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="195"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBb-qT-0wR" customClass="CachedImageView" customModule="AsyncAwaitExample" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="6kA-U6-Hko"/>
+                                                <constraint firstAttribute="width" constant="414" id="Txm-bw-hYI"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kBb-qT-0wR" firstAttribute="leading" secondItem="bXd-Ga-jdy" secondAttribute="leading" id="NL9-CH-OgQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="kBb-qT-0wR" secondAttribute="bottom" id="YEl-Dq-GDR"/>
+                                        <constraint firstAttribute="trailing" secondItem="kBb-qT-0wR" secondAttribute="trailing" id="r2c-gC-vhX"/>
+                                        <constraint firstItem="kBb-qT-0wR" firstAttribute="top" secondItem="bXd-Ga-jdy" secondAttribute="top" id="yQt-V7-Km0"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="414" height="195"/>
+                                <size key="customSize" width="414" height="200"/>
+                                <connections>
+                                    <outlet property="imageView" destination="kBb-qT-0wR" id="Hdv-NM-wNI"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="JTQ-rj-g4x" id="udA-SM-hfg"/>
-                            <outlet property="delegate" destination="JTQ-rj-g4x" id="vBN-ly-T1R"/>
-                        </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="The Movie DB" id="9GO-Z9-bJd"/>
+                    <connections>
+                        <outlet property="collectionView" destination="f1B-zS-AgQ" id="N6j-rV-kXN"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzk-kM-AqO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
