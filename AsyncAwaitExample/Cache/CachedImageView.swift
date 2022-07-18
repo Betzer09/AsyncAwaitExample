@@ -20,61 +20,63 @@ class CachedImageView: UIImageView {
     
     func loadImageWithUrl(_ url: URL?, completion: @escaping (Result<UIImage, Error>) -> () = {_ in} ) {
         guard let url = url else {completion(.failure(CachedImageError.noURLProvided)); return}
-
-        imageURL = url
-
-        image = nil
-
-        // retrieves image if already available in cache
-        if let imageFromCache = ImageLoadingManger.shared.imageCache.object(forKey: url as AnyObject) as? UIImage {
-            self.image = imageFromCache
-            return
-        }
         
-        loadThumbnailFromURL(url, completion: completion)
+        imageURL = url
+        
+        DispatchQueue.main.async {
+            self.image = nil
+            
+            // retrieves image if already available in cache
+            if let imageFromCache = ImageLoadingManger.shared.imageCache.object(forKey: url as AnyObject) as? UIImage {
+                self.image = imageFromCache
+                return
+            }
+            
+            self.loadThumbnailFromURL(url, completion: completion)
+        }
     }
     
     func loadImageWithUrl(_ urlString: String?, completion: @escaping (Result<UIImage, Error>) -> () = {_ in} ) {
         guard let urlString = urlString, let url = URL(string: urlString) else {completion(.failure(CachedImageError.noURLProvided)); return}
-
-        imageURL = url
-
-        image = nil
-
-        // retrieves image if already available in cache
-        if let imageFromCache = ImageLoadingManger.shared.imageCache.object(forKey: url as AnyObject) as? UIImage {
-            self.image = imageFromCache
-            return
-        }
         
-        loadThumbnailFromURL(url, completion: completion)
-    }
-    
-    private func loadThumbnailFromURL(_ url: URL, completion: @escaping (Result<UIImage, Error>) -> ()) {
-        // Load image not already in cache
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error {
-                completion(.failure(error))
+        imageURL = url
+        
+        DispatchQueue.main.async {
+            self.image = nil
+            
+            // retrieves image if already available in cache
+            if let imageFromCache = ImageLoadingManger.shared.imageCache.object(forKey: url as AnyObject) as? UIImage {
+                self.image = imageFromCache
                 return
             }
             
-            DispatchQueue.main.async {
-                guard let unwrappedData = data, let imageToCache = UIImage(data: unwrappedData) else { return}
+            self.loadThumbnailFromURL(url, completion: completion)
+        }
+    }
+    
+    
+    private func loadThumbnailFromURL(_ url: URL, completion: @escaping (Result<UIImage, Error>) -> ()) {
+        Task(priority: .low) {
+            do {
+                let data = try await imageAPI.fetchImageWith(backdropPath: url.absoluteString)
+                guard let imageToCache = UIImage(data: data) else {
+                    throw CachedImageError.unableToParseImageData
+                }
                 
                 if self.imageURL == url {
                     self.image = imageToCache
                 }
                 
                 ImageLoadingManger.shared.imageCache.setObject(imageToCache, forKey: url as AnyObject)
+                
                 completion(.success(imageToCache))
+            } catch {
+                completion(.failure(error))
             }
-        }.resume()
-    }
-    
-    
-    private func loadThumbnailFromURL(_ url: URL) async throws -> UIImage {
-        let data = try await imageAPI.fetchImageWith(backdropPath: url.absoluteString)
-        return UIImage(data: data)!
+            
+            
+        }
+        
         
     }
     
@@ -82,5 +84,5 @@ class CachedImageView: UIImageView {
         case noURLProvided
         case unableToParseImageData
     }
-
+    
 }

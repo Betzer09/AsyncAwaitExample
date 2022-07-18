@@ -24,7 +24,9 @@ class DiscoveryMovieCollectionViewCell: UICollectionViewCell {
         }
 
         let url = URL(string: "https://image.tmdb.org/t/p/w780\(movie.backdropPath)")
-        imageView.loadImageWithUrl(url)
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.imageView.loadImageWithUrl(movie.backdropPath)
+        }
     }
     
 }
