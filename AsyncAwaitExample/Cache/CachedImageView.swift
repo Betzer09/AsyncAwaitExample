@@ -36,6 +36,7 @@ class CachedImageView: UIImageView {
         }
     }
     
+    @available(*, deprecated, renamed: "loadImageWithUrl()")
     func loadImageWithUrl(_ urlString: String?, completion: @escaping (Result<UIImage, Error>) -> () = {_ in} ) {
         guard let urlString = urlString, let url = URL(string: urlString) else {completion(.failure(CachedImageError.noURLProvided)); return}
         
@@ -54,17 +55,38 @@ class CachedImageView: UIImageView {
         }
     }
     
+    @discardableResult
+    func loadImageWithUrl(_ urlString: String?) async throws -> UIImage {
+        guard let urlString = urlString, let url = URL(string: urlString) else {
+            return UIImage()
+        }
+        
+        DispatchQueue.main.async {
+            self.image = nil
+        }
+        
+        imageURL = url
+        
+        return try await withCheckedThrowingContinuation({ continuation in
+            loadThumbnailFromURL(url) { result in
+                continuation.resume(with: result)
+            }
+        })
+    }
+    
     
     private func loadThumbnailFromURL(_ url: URL, completion: @escaping (Result<UIImage, Error>) -> ()) {
-        Task(priority: .low) {
+        Task(priority: .background) {
             do {
                 let data = try await imageAPI.fetchImageWith(backdropPath: url.absoluteString)
                 guard let imageToCache = UIImage(data: data) else {
                     throw CachedImageError.unableToParseImageData
                 }
                 
-                if self.imageURL == url {
-                    self.image = imageToCache
+                DispatchQueue.main.async {
+                    if self.imageURL == url {
+                        self.image = imageToCache
+                    }
                 }
                 
                 ImageLoadingManger.shared.imageCache.setObject(imageToCache, forKey: url as AnyObject)

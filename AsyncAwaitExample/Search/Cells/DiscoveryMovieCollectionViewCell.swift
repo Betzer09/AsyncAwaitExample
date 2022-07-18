@@ -22,11 +22,14 @@ class DiscoveryMovieCollectionViewCell: UICollectionViewCell {
         guard let movie = movie else {
             return
         }
-
-        let url = URL(string: "https://image.tmdb.org/t/p/w780\(movie.backdropPath)")
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.imageView.loadImageWithUrl(movie.backdropPath)
-        }
+        
+        
+        imageView.loadImageWithUrl(movie.backdropPath)
+        
+        
+//        DispatchQueue.global(qos: .background).async { [weak self] in
+//            self?.imageView.loadImageWithUrl(movie.backdropPath)
+//        }
     }
     
 }
