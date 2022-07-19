@@ -14,12 +14,17 @@ class DiscoverCollectionViewModel {
     let discoveryAPI: DiscoverMoviesAPILogic = DiscoverMoviesAPI()
     
     @Published var movies: [DiscoveryMovie] = []
+    private var loadingTask: Task<Void, Never>?
+    
+    deinit {
+        loadingTask?.cancel()
+    }
     
     
     func fetchMovies() {
-        Task {
+        loadingTask =  Task {
             let requestedMovies = try? await discoveryAPI.fetchDiscoveryMovies(1)
-            movies = requestedMovies ?? []
+            self.movies = requestedMovies ?? []
         }
     }
 }
