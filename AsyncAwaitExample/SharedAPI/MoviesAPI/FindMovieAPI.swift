@@ -33,7 +33,6 @@ class FindMoviesAPI: FindMoviesAPILogic {
     
     func searchForMovieRecommendationSimilarToMovie(withId id: Int) {
         let url = buildSignedURL(withPath: "/movie/\(id)/recommendations")
-        
     }
     
 

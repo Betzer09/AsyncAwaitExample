@@ -136,7 +136,6 @@
 			children = (
 				11E4F46D2885F9930007F1F9 /* Cache */,
 				11E4F4692885ED070007F1F9 /* MoviesAPI */,
-				119E707F286BA1B200325E5B /* ImageAPI.swift */,
 			);
 			path = SharedAPI;
 			sourceTree = "<group>";
@@ -164,6 +163,7 @@
 				11E4F45B2885EC1B0007F1F9 /* Models */,
 				11E4F4552885E2440007F1F9 /* DiscoverMoviesAPI.swift */,
 				11E4F47B288713AB0007F1F9 /* FindMovieAPI.swift */,
+				119E707F286BA1B200325E5B /* ImageAPI.swift */,
 			);
 			path = MoviesAPI;
 			sourceTree = "<group>";

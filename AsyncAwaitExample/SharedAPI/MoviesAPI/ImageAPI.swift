@@ -37,7 +37,5 @@ struct ImageAPI: ImageAPILogic {
         let (data, _) = try await URLSession.shared.data(from: url)
         
         return data
-        
-
     }
 }
