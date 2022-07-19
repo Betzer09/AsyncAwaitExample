@@ -29,6 +29,10 @@ class FindMoviesAPI: FindMoviesAPILogic {
         let pageItem = URLQueryItem(name: "query", value: "\(title)")
         let url = buildSignedURL(withPath: "discover/movie", queryItems: [pageItem])
         
+    }
+    
+    func searchForMovieRecommendationSimilarToMovie(withId id: Int) {
+        let url = buildSignedURL(withPath: "/movie/\(id)/recommendations")
         
     }
     
