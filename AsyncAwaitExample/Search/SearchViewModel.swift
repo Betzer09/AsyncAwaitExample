@@ -7,8 +7,14 @@
 
 import Foundation
 
+
 class SearchViewModel {
     let api: FindMoviesAPILogic = FindMoviesAPI()
     
+    @Published var movies: [DiscoveryMovie] = []
+    
+    func fetchMovies() {
+        
+    }
     
 }

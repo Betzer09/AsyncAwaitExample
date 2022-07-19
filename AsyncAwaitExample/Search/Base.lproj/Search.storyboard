@@ -85,6 +85,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="B2N-dj-c4M" id="stj-iO-gZT"/>
+                                    <outlet property="delegate" destination="B2N-dj-c4M" id="7rt-ct-Dry"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NmN-z8-ahN"/>
@@ -100,6 +104,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search Movies" id="You-Oi-2o1"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Gq4-n4-si6" id="ovl-3U-ISw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3g-PY-mig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
