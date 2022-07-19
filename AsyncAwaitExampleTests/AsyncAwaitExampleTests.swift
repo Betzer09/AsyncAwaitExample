@@ -10,7 +10,7 @@ import XCTest
 
 class AsyncAwaitExampleTests: XCTestCase {
     
-    func test_didSuccesfullyFetchDiscoveryMovies() async throws {
+    func test_didSuccesfullyFetchDiscoveryMovies() async {
         let sut = makeSUT()
         do {
             let movies = try await sut.fetchDiscoveryMovies(1)
@@ -21,7 +21,7 @@ class AsyncAwaitExampleTests: XCTestCase {
         
     }
     
-    func test_failedToFetchMovieWithInvalidPage() async throws {
+    func test_failedToFetchMovieWithInvalidPage() async {
         let sut = makeSUT()
         do {
             let movies = try await sut.fetchDiscoveryMovies(-1)

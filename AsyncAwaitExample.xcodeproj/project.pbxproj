@@ -27,6 +27,7 @@
 		11E4F4782887123B0007F1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E4F4772887123B0007F1F9 /* Main.storyboard */; };
 		11E4F47A2887135C0007F1F9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4792887135C0007F1F9 /* SearchViewModel.swift */; };
 		11E4F47C288713AB0007F1F9 /* FindMovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F47B288713AB0007F1F9 /* FindMovieAPI.swift */; };
+		11E4F47F288725490007F1F9 /* XCTestCase+MemeoryLeakTrackerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F47E288725490007F1F9 /* XCTestCase+MemeoryLeakTrackerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		11E4F4772887123B0007F1F9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		11E4F4792887135C0007F1F9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		11E4F47B288713AB0007F1F9 /* FindMovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMovieAPI.swift; sourceTree = "<group>"; };
+		11E4F47E288725490007F1F9 /* XCTestCase+MemeoryLeakTrackerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemeoryLeakTrackerHelper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		11E4F4612885EC810007F1F9 /* AsyncAwaitExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				11E4F47D2887252E0007F1F9 /* Shared */,
 				11E4F4622885EC810007F1F9 /* AsyncAwaitExampleTests.swift */,
 			);
 			path = AsyncAwaitExampleTests;
@@ -190,6 +193,14 @@
 				11E4F4532885E1E20007F1F9 /* DiscoverCollectionViewModel.swift */,
 			);
 			path = Discover;
+			sourceTree = "<group>";
+		};
+		11E4F47D2887252E0007F1F9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				11E4F47E288725490007F1F9 /* XCTestCase+MemeoryLeakTrackerHelper.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11E4F4632885EC810007F1F9 /* AsyncAwaitExampleTests.swift in Sources */,
+				11E4F47F288725490007F1F9 /* XCTestCase+MemeoryLeakTrackerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
