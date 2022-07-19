@@ -16,6 +16,7 @@ struct DiscoveryMoviesResult: Decodable {
 }
 
 struct DiscoveryMovie: Decodable {
+    let id: Int
     let backdropPath: String
     let title: String
     let voteAverage: Double
