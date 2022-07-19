@@ -15,16 +15,18 @@ class DiscoverCollectionViewModel {
     
     @Published var movies: [DiscoveryMovie] = []
     private var loadingTask: Task<Void, Never>?
+    var currentPage = 0
     
     deinit {
         loadingTask?.cancel()
     }
     
     
-    func fetchMovies() {
-        loadingTask =  Task {
-            let requestedMovies = try? await discoveryAPI.fetchDiscoveryMovies(1)
-            self.movies = requestedMovies ?? []
+    func fetchMovies(page: Int = 1) {
+        loadingTask = Task {
+            currentPage += 1
+            let requestedMovies = try? await discoveryAPI.fetchDiscoveryMovies(currentPage)
+            self.movies.append(contentsOf: requestedMovies ?? [])
         }
     }
 }

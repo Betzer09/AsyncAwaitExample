@@ -19,7 +19,11 @@ class DiscoverCollectionViewController: UICollectionViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         setupBinders()
-        viewModel.fetchMovies()
+        
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
+            print("Fetching more movies")
+            self.viewModel.fetchMovies()
+        }
     }
     
     private func setupBinders() {
