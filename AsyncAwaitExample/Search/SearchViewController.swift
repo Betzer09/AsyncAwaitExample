@@ -37,11 +37,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             .store(in: &cancellables)
         
         searchTextField.searchTextField.textPublisher()
-              .receive(on: RunLoop.main)
-              .sink(receiveValue: { [weak self] value in
-                  print("UITextField.text changed to: \(value)")
-              })
-              .store(in: &cancellables)
+            .debounce(for: 0.4, scheduler: RunLoop.main)
+            .sink(receiveValue: { [weak self] value in
+                print("UITextField.text changed to: \(value)")
+            })
+            .store(in: &cancellables)
     }
     
     
