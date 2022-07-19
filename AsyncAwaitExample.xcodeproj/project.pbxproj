@@ -25,6 +25,8 @@
 		11E4F473288710560007F1F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F472288710560007F1F9 /* SearchViewController.swift */; };
 		11E4F475288711C10007F1F9 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E4F474288711C10007F1F9 /* Discover.storyboard */; };
 		11E4F4782887123B0007F1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E4F4772887123B0007F1F9 /* Main.storyboard */; };
+		11E4F47A2887135C0007F1F9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4792887135C0007F1F9 /* SearchViewModel.swift */; };
+		11E4F47C288713AB0007F1F9 /* FindMovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F47B288713AB0007F1F9 /* FindMovieAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		11E4F472288710560007F1F9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		11E4F474288711C10007F1F9 /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		11E4F4772887123B0007F1F9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		11E4F4792887135C0007F1F9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		11E4F47B288713AB0007F1F9 /* FindMovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMovieAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,6 @@
 		119E7066286B979500325E5B /* AsyncAwaitExample */ = {
 			isa = PBXGroup;
 			children = (
-				11E4F46D2885F9930007F1F9 /* Cache */,
 				119E707E286BA17900325E5B /* SharedAPI */,
 				11E4F476288712200007F1F9 /* Discover */,
 				119E707B286B9B6C00325E5B /* Search */,
@@ -121,6 +124,7 @@
 				11E4F46A2885F61F0007F1F9 /* Cells */,
 				119E706D286B979500325E5B /* Search.storyboard */,
 				11E4F472288710560007F1F9 /* SearchViewController.swift */,
+				11E4F4792887135C0007F1F9 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -128,6 +132,7 @@
 		119E707E286BA17900325E5B /* SharedAPI */ = {
 			isa = PBXGroup;
 			children = (
+				11E4F46D2885F9930007F1F9 /* Cache */,
 				11E4F4692885ED070007F1F9 /* MoviesAPI */,
 				119E707F286BA1B200325E5B /* ImageAPI.swift */,
 			);
@@ -155,6 +160,7 @@
 			children = (
 				11E4F45B2885EC1B0007F1F9 /* Models */,
 				11E4F4552885E2440007F1F9 /* DiscoverMoviesAPI.swift */,
+				11E4F47B288713AB0007F1F9 /* FindMovieAPI.swift */,
 			);
 			path = MoviesAPI;
 			sourceTree = "<group>";
@@ -294,8 +300,10 @@
 				11E4F46C2885F6410007F1F9 /* DiscoveryMovieCollectionViewCell.swift in Sources */,
 				11E4F4542885E1E20007F1F9 /* DiscoverCollectionViewModel.swift in Sources */,
 				11E4F4582885E2DA0007F1F9 /* Keys.swift in Sources */,
+				11E4F47A2887135C0007F1F9 /* SearchViewModel.swift in Sources */,
 				119E707D286B9C3700325E5B /* DiscoverCollectionViewController.swift in Sources */,
 				11E4F473288710560007F1F9 /* SearchViewController.swift in Sources */,
+				11E4F47C288713AB0007F1F9 /* FindMovieAPI.swift in Sources */,
 				119E7080286BA1B200325E5B /* ImageAPI.swift in Sources */,
 				119E706A286B979500325E5B /* SceneDelegate.swift in Sources */,
 				11E4F4562885E2440007F1F9 /* DiscoverMoviesAPI.swift in Sources */,

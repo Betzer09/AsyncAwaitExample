@@ -17,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder="search movies" translatesAutoresizingMaskIntoConstraints="NO" id="6ZC-UM-Bfu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gq4-n4-si6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cAh-Mo-FD4">
                                     <size key="itemSize" width="414" height="200"/>
@@ -87,9 +91,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gq4-n4-si6" firstAttribute="leading" secondItem="NmN-z8-ahN" secondAttribute="leading" id="6Tf-cu-OSl"/>
+                            <constraint firstItem="Gq4-n4-si6" firstAttribute="top" secondItem="6ZC-UM-Bfu" secondAttribute="bottom" id="8jB-YE-gmJ"/>
+                            <constraint firstItem="6ZC-UM-Bfu" firstAttribute="top" secondItem="NmN-z8-ahN" secondAttribute="top" id="CKb-aU-KuU"/>
                             <constraint firstItem="NmN-z8-ahN" firstAttribute="trailing" secondItem="Gq4-n4-si6" secondAttribute="trailing" id="QyV-Ty-qcE"/>
                             <constraint firstItem="NmN-z8-ahN" firstAttribute="bottom" secondItem="Gq4-n4-si6" secondAttribute="bottom" id="R9t-eS-JI0"/>
-                            <constraint firstItem="Gq4-n4-si6" firstAttribute="top" secondItem="NmN-z8-ahN" secondAttribute="top" id="q3w-JQ-00i"/>
+                            <constraint firstItem="6ZC-UM-Bfu" firstAttribute="trailing" secondItem="NmN-z8-ahN" secondAttribute="trailing" id="dq0-hL-Cdy"/>
+                            <constraint firstItem="6ZC-UM-Bfu" firstAttribute="leading" secondItem="NmN-z8-ahN" secondAttribute="leading" id="etX-Cm-h4h"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search Movies" id="You-Oi-2o1"/>

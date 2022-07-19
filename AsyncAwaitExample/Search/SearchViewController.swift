@@ -10,4 +10,9 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    let viewModel = SearchViewModel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
