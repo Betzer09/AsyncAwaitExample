@@ -12,9 +12,9 @@
 		119E706F286B979500325E5B /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119E706D286B979500325E5B /* Search.storyboard */; };
 		119E7071286B979700325E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119E7070286B979700325E5B /* Assets.xcassets */; };
 		119E7074286B979700325E5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119E7072286B979700325E5B /* LaunchScreen.storyboard */; };
-		119E707D286B9C3700325E5B /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E707C286B9C3700325E5B /* SearchCollectionViewController.swift */; };
+		119E707D286B9C3700325E5B /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E707C286B9C3700325E5B /* DiscoverCollectionViewController.swift */; };
 		119E7080286BA1B200325E5B /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E707F286BA1B200325E5B /* ImageAPI.swift */; };
-		11E4F4542885E1E20007F1F9 /* SearchCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4532885E1E20007F1F9 /* SearchCollectionViewModel.swift */; };
+		11E4F4542885E1E20007F1F9 /* DiscoverCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4532885E1E20007F1F9 /* DiscoverCollectionViewModel.swift */; };
 		11E4F4562885E2440007F1F9 /* DiscoverMoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4552885E2440007F1F9 /* DiscoverMoviesAPI.swift */; };
 		11E4F4582885E2DA0007F1F9 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4572885E2DA0007F1F9 /* Keys.swift */; };
 		11E4F45A2885E8660007F1F9 /* DiscoveryMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4592885E8660007F1F9 /* DiscoveryMovie.swift */; };
@@ -22,6 +22,9 @@
 		11E4F46C2885F6410007F1F9 /* DiscoveryMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F46B2885F6410007F1F9 /* DiscoveryMovieCollectionViewCell.swift */; };
 		11E4F46F2885F99D0007F1F9 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F46E2885F99D0007F1F9 /* CacheManager.swift */; };
 		11E4F4712885FB050007F1F9 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F4702885FB050007F1F9 /* CachedImageView.swift */; };
+		11E4F473288710560007F1F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F472288710560007F1F9 /* SearchViewController.swift */; };
+		11E4F475288711C10007F1F9 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E4F474288711C10007F1F9 /* Discover.storyboard */; };
+		11E4F4782887123B0007F1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E4F4772887123B0007F1F9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +45,9 @@
 		119E7070286B979700325E5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		119E7073286B979700325E5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		119E7075286B979700325E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		119E707C286B9C3700325E5B /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		119E707C286B9C3700325E5B /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
 		119E707F286BA1B200325E5B /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
-		11E4F4532885E1E20007F1F9 /* SearchCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewModel.swift; sourceTree = "<group>"; };
+		11E4F4532885E1E20007F1F9 /* DiscoverCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewModel.swift; sourceTree = "<group>"; };
 		11E4F4552885E2440007F1F9 /* DiscoverMoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesAPI.swift; sourceTree = "<group>"; };
 		11E4F4572885E2DA0007F1F9 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		11E4F4592885E8660007F1F9 /* DiscoveryMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryMovie.swift; sourceTree = "<group>"; };
@@ -53,6 +56,9 @@
 		11E4F46B2885F6410007F1F9 /* DiscoveryMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryMovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		11E4F46E2885F99D0007F1F9 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		11E4F4702885FB050007F1F9 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
+		11E4F472288710560007F1F9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		11E4F474288711C10007F1F9 /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		11E4F4772887123B0007F1F9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 			children = (
 				11E4F46D2885F9930007F1F9 /* Cache */,
 				119E707E286BA17900325E5B /* SharedAPI */,
+				11E4F476288712200007F1F9 /* Discover */,
 				119E707B286B9B6C00325E5B /* Search */,
 				119E7067286B979500325E5B /* AppDelegate.swift */,
 				119E7069286B979500325E5B /* SceneDelegate.swift */,
@@ -103,6 +110,7 @@
 				119E7072286B979700325E5B /* LaunchScreen.storyboard */,
 				119E7075286B979700325E5B /* Info.plist */,
 				11E4F4572885E2DA0007F1F9 /* Keys.swift */,
+				11E4F4772887123B0007F1F9 /* Main.storyboard */,
 			);
 			path = AsyncAwaitExample;
 			sourceTree = "<group>";
@@ -112,8 +120,7 @@
 			children = (
 				11E4F46A2885F61F0007F1F9 /* Cells */,
 				119E706D286B979500325E5B /* Search.storyboard */,
-				119E707C286B9C3700325E5B /* SearchCollectionViewController.swift */,
-				11E4F4532885E1E20007F1F9 /* SearchCollectionViewModel.swift */,
+				11E4F472288710560007F1F9 /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -167,6 +174,16 @@
 				11E4F4702885FB050007F1F9 /* CachedImageView.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		11E4F476288712200007F1F9 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				11E4F474288711C10007F1F9 /* Discover.storyboard */,
+				119E707C286B9C3700325E5B /* DiscoverCollectionViewController.swift */,
+				11E4F4532885E1E20007F1F9 /* DiscoverCollectionViewModel.swift */,
+			);
+			path = Discover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				119E7074286B979700325E5B /* LaunchScreen.storyboard in Resources */,
+				11E4F4782887123B0007F1F9 /* Main.storyboard in Resources */,
+				11E4F475288711C10007F1F9 /* Discover.storyboard in Resources */,
 				119E7071286B979700325E5B /* Assets.xcassets in Resources */,
 				119E706F286B979500325E5B /* Search.storyboard in Resources */,
 			);
@@ -273,9 +292,10 @@
 				119E7068286B979500325E5B /* AppDelegate.swift in Sources */,
 				11E4F4712885FB050007F1F9 /* CachedImageView.swift in Sources */,
 				11E4F46C2885F6410007F1F9 /* DiscoveryMovieCollectionViewCell.swift in Sources */,
-				11E4F4542885E1E20007F1F9 /* SearchCollectionViewModel.swift in Sources */,
+				11E4F4542885E1E20007F1F9 /* DiscoverCollectionViewModel.swift in Sources */,
 				11E4F4582885E2DA0007F1F9 /* Keys.swift in Sources */,
-				119E707D286B9C3700325E5B /* SearchCollectionViewController.swift in Sources */,
+				119E707D286B9C3700325E5B /* DiscoverCollectionViewController.swift in Sources */,
+				11E4F473288710560007F1F9 /* SearchViewController.swift in Sources */,
 				119E7080286BA1B200325E5B /* ImageAPI.swift in Sources */,
 				119E706A286B979500325E5B /* SceneDelegate.swift in Sources */,
 				11E4F4562885E2440007F1F9 /* DiscoverMoviesAPI.swift in Sources */,
@@ -448,7 +468,7 @@
 				INFOPLIST_FILE = AsyncAwaitExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Search;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -476,7 +496,7 @@
 				INFOPLIST_FILE = AsyncAwaitExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Search;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

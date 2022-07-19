@@ -11,6 +11,8 @@ class DiscoveryMovieCollectionViewCell: UICollectionViewCell {
     static let identifer = "DiscoveryMovieCollectionViewCell"
     
     @IBOutlet weak var imageView: CachedImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
     var movie: DiscoveryMovie? {
         didSet {
@@ -23,13 +25,9 @@ class DiscoveryMovieCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        
         imageView.loadImageWithUrl(movie.backdropPath)
-        
-        
-//        DispatchQueue.global(qos: .background).async { [weak self] in
-//            self?.imageView.loadImageWithUrl(movie.backdropPath)
-//        }
+        titleLabel.text = movie.title
+        detailLabel.text = movie.overview
     }
     
 }

@@ -9,9 +9,9 @@ import UIKit
 import Combine
 
 
-class SearchCollectionViewController: UICollectionViewController {
+class DiscoverCollectionViewController: UICollectionViewController {
     
-    var viewModel = SearchCollectionViewModel()
+    var viewModel = DiscoverCollectionViewModel()
     private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {

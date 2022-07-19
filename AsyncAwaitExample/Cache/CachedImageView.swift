@@ -95,11 +95,7 @@ class CachedImageView: UIImageView {
             } catch {
                 completion(.failure(error))
             }
-            
-            
         }
-        
-        
     }
     
     enum CachedImageError: Error {

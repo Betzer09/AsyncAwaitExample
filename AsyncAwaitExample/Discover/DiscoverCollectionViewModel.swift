@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 
-class SearchCollectionViewModel {
+class DiscoverCollectionViewModel {
     // MARK: -  Dependiens
     let discoveryAPI: DiscoverMoviesAPILogic = DiscoverMoviesAPI()
     
