@@ -14,6 +14,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     let viewModel = SearchViewModel()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchTextField: UISearchBar!
     private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
@@ -34,6 +35,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                 self.collectionView.reloadData()
             }
             .store(in: &cancellables)
+        
+        searchTextField.searchTextField.textPublisher()
+              .receive(on: RunLoop.main)
+              .sink(receiveValue: { [weak self] value in
+                  print("UITextField.text changed to: \(value)")
+              })
+              .store(in: &cancellables)
     }
     
     
@@ -48,4 +56,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.movie = viewModel.movies[indexPath.row]
         return cell
     }
+}
+
+extension UITextField {
+  func textPublisher() -> AnyPublisher<String, Never> {
+      NotificationCenter.default
+          .publisher(for: UITextField.textDidChangeNotification, object: self)
+          .map { ($0.object as? UITextField)?.text  ?? "" }
+          .eraseToAnyPublisher()
+  }
 }

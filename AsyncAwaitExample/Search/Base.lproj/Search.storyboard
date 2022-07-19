@@ -106,6 +106,7 @@
                     <navigationItem key="navigationItem" title="Search Movies" id="You-Oi-2o1"/>
                     <connections>
                         <outlet property="collectionView" destination="Gq4-n4-si6" id="ovl-3U-ISw"/>
+                        <outlet property="searchTextField" destination="6ZC-UM-Bfu" id="kaf-F9-aug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3g-PY-mig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
